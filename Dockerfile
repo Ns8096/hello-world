@@ -1,4 +1,5 @@
 FROM tomcat:latest
-RUN cp -R  /usr/local/tomcat/webapps.dist/*  /usr/local/tomcat/webapps
-COPY ./*.war /usr/local/tomcat/webapps
-
+COPY  /home/ubuntu/.jenkins/workspace/end-to-end/webapp/target/webapp.war /usr/local/tomcat/webapps
+WORKDIR /usr/local/tomcat/webapps 
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "webapp.war"]
