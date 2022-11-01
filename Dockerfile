@@ -1,5 +1,5 @@
 FROM tomcat:latest
-WORKDIR /usr/local/tomcat/webapps
-COPY  /home/ubuntu/.jenkins/workspace/end-to-end/webapp/target/webapp.war .
+LABEL maintainer: "Naveen sai"
+ADD ./target/webapp.war /usr/local/tomcat/webapp/
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "webapp.war"]
+CMD ["catalina.sh", "run"]
