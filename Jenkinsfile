@@ -4,6 +4,9 @@ pipeline{
     tools{
         maven "Maven"
     }
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('Docker-Build')
+    }
     stages{
         stage("Download code"){
             steps{
