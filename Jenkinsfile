@@ -17,7 +17,7 @@ pipeline{
         }
         stage("Create a docker image customized"){
             steps{
-                sh 'sudo docker build -f Dockerfile -t knsb222/ns22:latest .'
+                sh 'sudo docker build -f Dockerfile -t knsb222/ns22:latest'
                 
             }
         }
